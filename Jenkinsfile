@@ -1,13 +1,14 @@
 pipeline {
+
     agent {
-        label = agent-1
+        label 'agent-1'
     }
 
     options {
         timeout(time: 1 , unit: 'MINUTES')
     }
 
-    Environment {
+    environment {
         deploy_to = production
     }
 
