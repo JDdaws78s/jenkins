@@ -1,13 +1,13 @@
-pipeline{
-    agent{
+pipeline {
+    agent {
         label = agent-1
     }
 
-    options{
+    options {
         timeout(time: 1 , unit: 'MINUTES')
     }
 
-    Environment{
+    Environment {
         deploy_to = production
     }
 
@@ -23,23 +23,23 @@ pipeline{
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
 
-    stages{
-        stage('build'){
+    stages {
+        stage('build') {
             steps{
                 sh 'echo this is build'
             }
         }
-        stage('Test'){
+        stage('Test') {
             steps{
                 sh 'echo This is test'
             }
         }
-        stage('Deploy'){
+        stage('Deploy') {
             steps{
                 sh 'echo this is deploy'
             }
         }
-        stage('parameters'){
+        stage('parameters') {
             steps {
                 echo "Hello ${params.PERSON}"
 
@@ -54,14 +54,14 @@ pipeline{
         }
     }
 
-    post{
-        always{
+    post {
+        always {
             echo 'this run always'
         }
-        sucess{
+        sucess {
             echo 'this run when success'
         }
-        failure{
+        failure {
             echo 'this run when failure'
         }
     }
