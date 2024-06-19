@@ -59,7 +59,7 @@ pipeline {
         always {
             echo 'this run always'
         }
-        sucess {
+        success {
             echo 'this run when success'
         }
         failure {
