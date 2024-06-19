@@ -9,7 +9,7 @@ pipeline {
     }
 
     environment {
-        deploy_to = production
+        deploy_to = 'production'
     }
 
     parameters {
